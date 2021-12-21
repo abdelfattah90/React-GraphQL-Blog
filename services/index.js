@@ -114,7 +114,7 @@ export const getAdjacentPosts = async (createdAt, slug) => {
     query GetAdjacentPosts($createdAt: DateTime!, $slug: String!) {
       next: posts(
         first: 1
-        orderBy: createdAt_DESC
+        orderBy: createdAt_ASC
         where: { slug_not: $slug, AND: { createdAt_gte: $createdAt } }
       ) {
         title
